@@ -1,6 +1,6 @@
-package com.imooc.mapper;
+package com.imooc.pojo;
 
-import javax.persistence.*;
+import javax.persistence.Column;
 
 public class Users {
     @Column(name = "USER")
