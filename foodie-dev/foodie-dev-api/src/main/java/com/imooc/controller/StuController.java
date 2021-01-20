@@ -23,7 +23,7 @@ public class StuController {
         return "OK";
     }
 
-    @PostMapping("/updateStu")
+    @PostMapping("")
     public Object updateStu(){
         Stu stu = new Stu();
         stu.setName("李四");
