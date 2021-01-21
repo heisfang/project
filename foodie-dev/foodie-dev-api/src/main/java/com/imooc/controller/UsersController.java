@@ -5,15 +5,18 @@ import com.imooc.pojo.bo.UsersBO;
 import com.imooc.service.StuService;
 import com.imooc.service.UsersService;
 import com.imooc.utils.IMOOCJSONResult;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+@Api(value = "注册登录",tags = {"用于注册登录的相关文档"})
 @RestController
 public class UsersController {
     @Autowired
     private UsersService usersService;
 
+    @ApiOperation(value = "用户名是否存在",notes = "用户名是否存在",httpMethod = "GET")
     @GetMapping("/userNameIseExist")
     public IMOOCJSONResult getStu(@RequestParam String username){
         if(StringUtils.isEmpty(username)){
@@ -26,6 +29,7 @@ public class UsersController {
         return IMOOCJSONResult.ok();
     }
 
+    @ApiOperation(value = "注册用户",notes = "用户注册",httpMethod = "POST")
     @PostMapping("/saveUser")
     public IMOOCJSONResult saveUser(@RequestBody UsersBO usersBO){
         if(StringUtils.isEmpty(usersBO.getUsername())

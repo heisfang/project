@@ -20,6 +20,8 @@ public class UsersServiceImpl implements UsersService {
 
     @Autowired
     private UsersMapper usersMapper;
+    private static final String USER_FACE = "http://122.152.205.72:88/group1/M00/00/05/CpoxxFw_8_qAIlFXAAAcIhVPdSg994.png";
+
 
     @Override
     public boolean userIsExist(String userName) {
@@ -42,7 +44,7 @@ public class UsersServiceImpl implements UsersService {
         }
         user.setNickname(userBO.getUsername());
         user.setRealname(userBO.getUsername());
-        user.setFace(null);
+        user.setFace(USER_FACE);
         user.setMobile("");
         user.setEmail("");
         user.setSex(SexEnum.women.type);
